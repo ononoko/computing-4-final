@@ -10,8 +10,11 @@ class Universe {
   Universe();
   // using the file at filepath, instantiate elements in bodies_
   Universe(double t, double delta_t, std::string filepath);
-  // calls step() on each Body in bodies_ vector with arg delta_t_
+  // runs the universe simulation by calling update_universe(), then draw()
+  // draw window loops runs in here
   // if time_elapsed >= t_, kill simulation in here
+  void run();
+  // calls step() on each Body in bodies_ vector with arg delta_t_
   void update_universe();
   // given universe coordinates, return sfml vector
   sf::Vector2f get_sfml_coords(double x_coord, double y_coord);
